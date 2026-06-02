@@ -1,0 +1,25 @@
+{
+  "name": "우리 동네 침수 진단",
+  "short_name": "침수 진단",
+  "description": "광주광역시 동별 침수 위험도 지도 및 진단 테스트",
+  "start_url": "./광주_침수_진단_앱.html",
+  "display": "standalone",
+  "background_color": "#f8f8f6",
+  "theme_color": "#1565C0",
+  "orientation": "portrait-primary",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
