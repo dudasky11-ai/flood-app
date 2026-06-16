@@ -382,9 +382,42 @@ function calcResult(){
   if(lvl>=60){grade='고위험';gc='#A32D2D';gb='#FCEBEB';}
   else if(lvl>=30){grade='중위험';gc='#854F0B';gb='#FAEEDA';}
   else{grade='저위험';gc='#0F6E56';gb='#E1F5EE';}
-  if(A>=B&&A>=C){mainType='도시화형';advice='집 입구에 차수판 설치를 검토하고, 빗물받이를 주기적으로 청소해두세요. 지자체 침수 알림 문자 서비스도 신청해두세요.';}
-  else if(B>=A&&B>=C){mainType='저지대형';advice='장마철 하천 수위 정보를 미리 확인하세요. 1층이라면 빗물 역류 방지 밸브 설치를 검토해보세요.';}
-  else{mainType='복합형';advice='복합적인 요인이 작용할 수 있어요. 집 주변 지형과 배수 상태를 모두 점검하고, 기상청 침수 위험 알림에 주의하세요.';}
+  if(A>=B&&A>=C){mainType='도시화형';advice=`<b style="color:#0C447C;">📋 도시화형 침수 방재 대책</b><br><br>
+<b>즉시 할 수 있는 것</b><br>
+• 집 입구에 차수판(물막이판) 설치 — 반지하·1층 필수<br>
+• 집 앞 빗물받이(하수구) 주기적 청소 — 막히면 역류 발생<br>
+• 지자체 침수 알림 문자 서비스 신청<br><br>
+<b>장기적으로 준비할 것</b><br>
+• 침수 피해 보험 가입 검토 (반지하·저층 거주자)<br>
+• 장마철 전 주변 배수로·맨홀 상태 사전 점검<br>
+• 집중호우 예보 시 지하공간 신속 대피 계획 수립<br><br>
+<b>지역사회 차원의 대책</b><br>
+• 아스팔트 대신 투수 블록·녹지 확대 (그린 인프라)<br>
+• 하수관거 용량 확대 및 노후 관로 정비 건의`;}
+  else if(B>=A&&B>=C){mainType='저지대형';advice=`<b style="color:#27500A;">📋 저지대형 침수 방재 대책</b><br><br>
+<b>즉시 할 수 있는 것</b><br>
+• 장마철 인근 하천 수위 정보 주기적 확인<br>
+• 빗물 역류 방지 밸브 설치 (화장실·하수구)<br>
+• 집중호우 예보 시 저지대 농경지·주택 사전 대피<br><br>
+<b>장기적으로 준비할 것</b><br>
+• 농경지 주변 배수로 사전 정비<br>
+• 가재도구·가전제품을 높은 곳으로 이동하는 습관<br>
+• 지역 방재 대피소 위치 미리 파악<br><br>
+<b>지역사회 차원의 대책</b><br>
+• 저지대 지형 개선 또는 성토 공사 건의<br>
+• 하천 정비 및 제방 강화 지자체 요청`;}
+  else{mainType='복합형';advice=`<b style="color:#444441;">📋 복합형 침수 방재 대책</b><br><br>
+<b>즉시 할 수 있는 것</b><br>
+• 기상청 침수 위험 알림 앱 설치 및 알림 설정<br>
+• 집 주변 배수 상태와 지형 직접 점검<br>
+• 동 주민센터에 우리 동네 침수 이력 문의<br><br>
+<b>장기적으로 준비할 것</b><br>
+• 도시화형·저지대형 대책을 모두 병행하여 준비<br>
+• 비상 연락망 및 대피 경로 가족과 공유<br>
+• 침수 피해 보험 가입 검토<br><br>
+<b>지역사회 차원의 대책</b><br>
+• 재난 통계 기록 표준화 지자체 건의<br>
+• 마을 단위 자율 방재단 참여`;}
   const dongExtra=selectedDong?`<div style="margin-top:8px;font-size:12px;color:#888;">📍 ${selectedDong.dong} 실제 데이터: ${selectedDong.grade} (${selectedDong.score}점·${typeLabel[selectedDong.type]})</div>`:'';
   document.getElementById('result-area').innerHTML=`
     <div class="result-card" style="background:${gb};border:1px solid ${gc}44;">
